@@ -1,8 +1,8 @@
 # Start the Vault server in the background using the specified configuration file
 vault server -config /vault/config/config.hcl &
 
-# Wait for 3 seconds to allow the Vault server to start
-sleep 3
+# Wait for 5 seconds to allow the Vault server to start
+sleep 5
 
 # Define the file path to store transit tokens
 TOKENS_FILE="/vault/key/transit_tokens"

@@ -1,8 +1,8 @@
 # Start the Vault server in the background using the specified configuration file
 vault server -config /vault/config/config.hcl &
 
-# Wait for 10 seconds to allow the Vault server to start properly
-sleep 10
+# Wait for 5 seconds to allow the Vault server to start properly
+sleep 5
 
 # Get the current Vault status in JSON format
 status=$(vault status -format=json)
