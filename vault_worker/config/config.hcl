@@ -1,22 +1,19 @@
 ui = true
-api_addr = "http://10.1.20.200:8200"
-cluster_addr = "http://10.1.20.200:8201"
+api_addr = "http://VAULT_IP:8200"
+cluster_addr = "http://VAULT_IP:8201"
 disable_mlock = true
  
 storage "raft" {
   path = "/vault/data"
   node_id = "vault-1"
   retry_join {
-      leader_api_addr = "http://10.1.20.201:8200"
-  }
-  retry_join {
-      leader_api_addr = "http://10.1.20.202:8200"
+      leader_api_addr = "http://ANOTHER_VAULT_IP:8200"
   }
 }
  
 seal "transit" {
-  address = "http://10.1.20.200:8202"
-  token = "hvs.CAESIGjxDMOF0gAZY9w_3HMVmoygf3Iu2rDDUbFzoh5GohdCGh4KHGh2cy55Q2RwTmdrczFrZGJWWHNjbG5DQldpTG0"
+  address = "http://TRANSIT_VAULT_IP:8200"
+  token = "AUTOUNSEAL_TOKEN"
   disable_renewal = "false"
   key_name = "defaultautounseal"
   mount_path = "transit/"

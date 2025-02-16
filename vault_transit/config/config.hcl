@@ -1,6 +1,6 @@
 ui = true
- api_addr = "http://10.1.20.200:8200"
- cluster_addr = "http://10.1.20.200:8201"
+ api_addr = "http://VAULT_IP:8200"
+ cluster_addr = "http://VAULT_IP:8201"
  disable_mlock = true
  
  storage "raft" {

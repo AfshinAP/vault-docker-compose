@@ -93,6 +93,4 @@ else
     echo "$AUDIT_LOGS"
 fi
 
-
-
 wait
